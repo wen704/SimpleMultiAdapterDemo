@@ -68,6 +68,7 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
         if (null == datas) {
             this.datas = new ArrayList<>();
         }
+        itemStyle = new RViewItemManager<>();
     }
 
     /**
@@ -81,11 +82,11 @@ public class RViewAdapter<T> extends RecyclerView.Adapter<RViewHolder> {
             this.datas = new ArrayList<>();
         }
         itemStyle = new RViewItemManager<>();
-        // 讲一种新的 item 类型加入到多样式集合中
+        // 将一种新的 item 类型加入到多样式集合中
         addItemStyles(item);
     }
 
-    private void addItemStyles(RViewItem<T> item) {
+    public void addItemStyles(RViewItem<T> item) {
         itemStyle.addStyles(item);
     }
 
